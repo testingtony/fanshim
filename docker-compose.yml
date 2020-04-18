@@ -1,0 +1,8 @@
+version: "2"
+services:
+  fanshim:
+    image: testingtony/fanshim
+    privileged: true
+    environment: 
+      - ON_TEMP=65
+      - OFF_TEMP=55
