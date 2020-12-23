@@ -13,14 +13,15 @@ import (
 
 func main() {
 
-	p, err := rpi.OpenPin(18, rpi.OUT)
+	onTemp := getVar("ON_TEMP", 65)
+	offTemp := getVar("OFF_TEMP", 55)
+	pin := getVar("FAN_PIN", 18)
+
+	p, err := rpi.OpenPin(int(pin), rpi.OUT)
 	if err != nil {
 		panic(err)
 	}
 	defer p.Close()
-
-	onTemp := getVar("ON_TEMP", 65)
-	offTemp := getVar("OFF_TEMP", 55)
 
 	fmt.Printf("Turning off at %d and on at %d\n", offTemp, onTemp)
 
