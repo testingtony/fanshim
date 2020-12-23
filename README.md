@@ -12,4 +12,5 @@ services:
     environment: 
       - ON_TEMP=65
       - OFF_TEMP=55
+      - FAN_PIN=18
 ```
